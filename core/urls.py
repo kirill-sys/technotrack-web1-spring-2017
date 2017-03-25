@@ -1,3 +1,4 @@
+
 """application URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,13 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf import settings
 from django.conf.urls import url, include
+from django.contrib import admin
+
+from core.views import HomePageView
 
 urlpatterns = [
-    url(r'', include("core.urls")),
+    url(r'^admin/', admin.site.urls),
+    url(r'^blogs/', include('blogs.urls', namespace="blogs")),
+    url(r'^$', HomePageView.as_view(), name='home')
 ]
-
-if settings.DEBUG is True:
-    from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

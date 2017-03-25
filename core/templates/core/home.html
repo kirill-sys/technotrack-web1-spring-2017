@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+{% block on_page_title %}
+    Главная
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'blogs:blog_list' %}"><h3>Список всех блогов</h3></a>
+    <div>Кол-во пользователей: {{ users_count }}</div>
+    <div>Кол-во блогов: {{ blogs_count }}</div>
+    <div>Кол-во постов: {{ posts_count }}</div>
+    <div>Кол-во комментариев: {{ comments_count }}</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% if object_list %}
+    <div>
+        <h3 style="color: green">Комментарии:</h3>
+        {% for comment in object_list %}
+            <p style="margin-top: 0px; margin-bottom: 0px;">{{ comment.id }}:
+                <img src="{{ comment.author.avatar.url }}" width="5%">
+                "{{ comment.text }}"
+            </p>
+            <small>Автор: {{ comment.author }}, {{ comment.updated_at }}</small>
+            <br/>
+            <hr/>
+        {% endfor %}
+    </div>
+{% endif %}

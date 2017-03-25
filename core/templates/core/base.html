@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+<p align="center" style="font-weight: bold">
+    {% block on_page_title %}{% endblock %}
+</p>
+<hr/>
+<div>
+    {% block content %}{% endblock %}
+</div>
+<div>
+    {% block footer %}<br/>
+        <hr noshade color="blue" size="5"/>
+        <p align="center">Made by kirill_sys</p> {% endblock %}
+</div>
+</body>
+</html>
